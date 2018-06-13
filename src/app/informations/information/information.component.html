@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-body">
+    <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+      <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="dataservices.selectedEmployee.$key" >
+      <div class="form-group">
+        <label>Name</label>
+        <input class="form-control" name="name" #name="ngModel" [(ngModel)]="dataservices.selectedEmployee.name" placeholder="Name of your key" required>
+      </div>
+      <div class="form-group">
+        <label>Description</label>
+        <input class="form-control" name="description" #name="ngModel" [(ngModel)]="dataservices.selectedEmployee.description" placeholder="Description">
+      </div>
+      <div class="form-group">
+        <label>Comment</label>
+        <div class="input-group">
+            <span class="input-group-text"> <i class="fas fa-comment"></i> </span>
+            <input class="form-control" name="comment" #name="ngModel" [(ngModel)]="dataservices.selectedEmployee.comment" placeholder="Comment...">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <button type="submit" class="btn btn-secondary" [disabled] ="!employeeForm.valid" >
+          <i class="fas fa-cloud"></i> Subtmit </button>
+        <button id="second" type="button" class="btn btn-secondary" (click) = "resetForm(employeeForm)">
+          <i class="fas fa-redo-alt"></i> Reset </button>
+        <button id="third" class="btn btn-primary"  (click) ="onLogout()"> 
+          <i class="fas fa-sign-out-alt" *ngIf = "isAuth" ></i> Logout </button>  
+      </div>
+    </form>
+  </div>
+</div>

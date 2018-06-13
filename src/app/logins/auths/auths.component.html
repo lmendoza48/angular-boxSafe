@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header"> Login </div>
+  <div class="card-body">
+    <form #users = "ngForm" (ngSubmit) = "onLoginUser()">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <div class="input-group">
+              <span class="input-group-text"> <i class="fa fa-address-card"></i> </span>
+              <input class="form-control" type="email" name="email"  #name ="ngModel" [(ngModel)] = "email" required >
+        </div>         
+    </div>
+  
+    <div class="form-group">
+      <label for="password">Password:</label>
+        <div class="input-group">
+          <span class="input-group-text"> <i class="fas fa-key"></i></span>
+          <input type="password" class="form-control" name="password" [(ngModel)] = "password" >
+        </div>
+    </div>
+     <button type="submit" class="btn primary" [disabled] ="!users.valid"> Login </button>
+    </form>
+  </div>
+</div><br>
+<div style="text-align: center"> 
+    <div class="alert alert-warning"  *ngIf="(users.valid) && (error.message.length > 0)">
+      {{error.message}}!!!
+    </div>
+  </div>

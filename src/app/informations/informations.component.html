@@ -1,0 +1,14 @@
+<div class="row" *ngIf = "isAuth">
+  <div class="col-md-7">
+      <app-information></app-information>
+  </div>
+  <div class="col-md-5">
+      <app-information-list></app-information-list>
+  </div>
+</div>
+<div class="container" *ngIf = "!isAuth">
+    <div style="text-align: center">
+        <p><strong>empty pague</strong> login first!!!</p>
+        <button class="btn btn-secundary" (click)= "getBack()"> <i class="fa fa-arrow-left"></i> back</button>
+    </div>
+</div>

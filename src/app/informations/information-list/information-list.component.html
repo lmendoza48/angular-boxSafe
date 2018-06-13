@@ -1,0 +1,23 @@
+<div *ngFor="let getEmployee of dataList; let i = index" >
+  <div id="accordion">
+      <div class="card">
+        <div class="card-header">
+          <a class="card-link" data-toggle="collapse" href="#collapseOne_{{i}}">
+            {{getEmployee.name}}
+          </a>
+        </div>
+        <div id="collapseOne_{{i}}" class="collapse" data-parent="#accordiont">
+          <div class="card-body">
+            {{getEmployee.description}} - {{getEmployee.comment}} <br>
+            <div class="button-group-align">
+                <button class="btn btn-secunddary" (click)= "onItemClick(getEmployee)"><i class="fas fa-sync"></i></button>
+                <button class="btn btn-danger"  (click)= "onDelete(getEmployee)" ><i class="fas fa-trash-alt"></i></button>
+            </div> 
+          </div>
+        </div>
+  </div>
+</div>
+</div>
+<div *ngIf = "dataList.length == 0">
+<div class="alert alert-success"><strong>No data</strong> for view.!!!</div>	   
+</div>
