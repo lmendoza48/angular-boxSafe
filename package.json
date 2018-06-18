@@ -3,14 +3,18 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "http-server dist/boxsafe-angular",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "heroku-prebuild": "npm install -g http-server",
+    "postinstall": "ng build --prod"
   },
   "private": true,
   "dependencies": {
+    "@angular/compiler-cli": "^6.0.3", 
+    "@angular/cli": "~6.0.8",
     "@angular/animations": "^6.0.3",
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
@@ -21,8 +25,11 @@
     "@angular/platform-browser-dynamic": "^6.0.3",
     "@angular/router": "^6.0.3",
     "angularfire2": "^5.0.0-rc.10",
+    "typescript": "~2.7.2",
     "core-js": "^2.5.4",
+    "express": "^4.16.3",
     "firebase": "^5.0.4",
+    "path": "^0.12.7",
     "rxjs": "^6.0.0",
     "zone.js": "^0.8.26"
   },
@@ -46,5 +53,9 @@
     "protractor": "~5.3.0",
     "ts-node": "~5.0.1",
     "tslint": "~5.9.1"
+  },
+  "engines": {
+    "node": "10.4.0",
+    "npm": "6.1.0"
   }
 }

@@ -1,14 +1,23 @@
-<div class="row" *ngIf = "isAuth">
-  <div class="col-md-7">
+<div class="row" *ngIf = "isAuth && isUserId">
+  <div class="col-md-5">
       <app-information></app-information>
+  </div>
+  <div class="col-md-2">
+
   </div>
   <div class="col-md-5">
       <app-information-list></app-information-list>
   </div>
 </div>
 <div class="container" *ngIf = "!isAuth">
-    <div style="text-align: center">
-        <p><strong>empty pague</strong> login first!!!</p>
-        <button class="btn btn-secundary" (click)= "getBack()"> <i class="fa fa-arrow-left"></i> back</button>
+    <div class="alert alert-warning" style="text-align: center">
+        <p><strong>Empty pague.</strong> Login first!!!</p>
+        <button class="btn btn-warning" (click)= "getBack()"> <i class="fa fa-arrow-left"></i> back</button>
+    </div>
+</div>
+<div class="container" *ngIf = "!isUserId">
+    <div class="alert alert-danger" style="text-align: center">
+        <p><strong>Error with your login.</strong>  Login Again please!!!</p>
+        <button class="btn btn-danger" (click)= "getBack()"> <i class="fa fa-arrow-left"></i> back</button>
     </div>
 </div>

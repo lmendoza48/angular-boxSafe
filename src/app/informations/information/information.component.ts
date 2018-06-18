@@ -16,8 +16,7 @@ export class InformationComponent implements OnInit {
 
   constructor(public dataservices : DataService, public userServices : UsersService) { }
 
-  ngOnInit() {    
-    this.isAuth = this.userServices.isUserEmailLoggedIn;
+  ngOnInit() {
   }
 
   /** metodo para traer los datos del formmulario

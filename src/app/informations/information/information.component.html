@@ -1,4 +1,8 @@
 <div class="card">
+  <div class="card-header">
+      <button id="third" class="btn btn-primary"  (click) ="onLogout()"> 
+          <i class="fas fa-sign-out-alt" *ngIf = "isAuth" ></i> Logout </button>
+  </div>
   <div class="card-body">
     <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
       <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="dataservices.selectedEmployee.$key" >
@@ -22,9 +26,7 @@
         <button type="submit" class="btn btn-secondary" [disabled] ="!employeeForm.valid" >
           <i class="fas fa-cloud"></i> Subtmit </button>
         <button id="second" type="button" class="btn btn-secondary" (click) = "resetForm(employeeForm)">
-          <i class="fas fa-redo-alt"></i> Reset </button>
-        <button id="third" class="btn btn-primary"  (click) ="onLogout()"> 
-          <i class="fas fa-sign-out-alt" *ngIf = "isAuth" ></i> Logout </button>  
+          <i class="fas fa-redo-alt"></i> Reset </button>  
       </div>
     </form>
   </div>
