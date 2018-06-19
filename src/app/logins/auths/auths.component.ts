@@ -24,7 +24,7 @@ export class AuthsComponent implements OnInit {
           this.router.navigate(['/data'])
         }).catch((_error)=>{
           this.error = _error
-          this.router.navigate(['/'])
+          this.router.navigate(['/login'])
         })
   }
 }

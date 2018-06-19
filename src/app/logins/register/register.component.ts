@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
             this.router.navigate(['/data'])
         }).catch((_error)=>{
           this.errorMessage = _error
-          this.router.navigate(['/'])
+          this.router.navigate(['/register'])
         })
   }
 
