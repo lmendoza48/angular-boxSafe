@@ -20,14 +20,21 @@ import { RouterModule, Routes } from '@angular/router';
 
 const appRoutes: Routes = [
   {
-  path: '' , 
-  component:LoginsComponent 
+    path: '' , 
+    component:LoginsComponent 
   },
   { 
-  path: 'data', 
-  component: InformationsComponent 
-  }
-  
+    path: 'data', 
+    component: InformationsComponent 
+  },
+  {
+    path : 'login',
+    component :  AuthsComponent
+  },
+  {
+    path : 'register',
+    component :  RegisterComponent
+  }  
 ];
 
 @NgModule({

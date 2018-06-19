@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginsComponent implements OnInit {
 
+  title = 'Box-Safe!'; 
+  
   constructor() { }
 
   ngOnInit() {

@@ -1,3 +1,15 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top"> 
+        <a class="navbar-brand" href="/">
+           <img src="favicon.ico" alt="BOX-SAFE"> BOX-SAFE 
+        </a>
+        <!-- Links -->
+  <ul class="navbar-nav ml-auto" *ngIf="isAuth && isUserId">
+    <li class="nav-item">
+            <button id="third" class="btn btn-primary"  (click) ="getBack()"> 
+                    <i class="fas fa-sign-out-alt" *ngIf = "isAuth" ></i> Logout </button>
+    </li>
+  </ul>
+</nav>
 <div class="row" *ngIf = "isAuth && isUserId">
   <div class="col-md-5">
       <app-information></app-information>
