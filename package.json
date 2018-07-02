@@ -3,10 +3,12 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "http-server dist/boxsafe-angular",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
+    "heroku-prebuild": "npm install -g http-server",
+    "postinstall": "ng build --prod",
     "e2e": "ng e2e"
   },
   "private": true,
