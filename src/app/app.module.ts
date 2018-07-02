@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -16,7 +17,10 @@ import { AuthsComponent } from './logins/auths/auths.component';
 import { RegisterComponent } from './logins/register/register.component';
 import { UsersService } from './services/users.service';
 import { DataService } from './services/data.service';
-import { RouterModule, Routes } from '@angular/router';
+import { PageInitComponent } from './page-init/page-init.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialComponents } from './angular-material/material.components'
+
 
 const appRoutes: Routes = [
   {
@@ -45,7 +49,8 @@ const appRoutes: Routes = [
     InformationListComponent,
     LoginsComponent,
     AuthsComponent,
-    RegisterComponent
+    RegisterComponent,
+    PageInitComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,9 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(
       appRoutes //route where my app
-    )
+    ),
+    BrowserAnimationsModule,
+    MaterialComponents
   ],
   providers: [ 
     UsersService,

@@ -11,6 +11,7 @@ import { Data } from '../../models/data';
 export class InformationListComponent implements OnInit {
 
   dataList : Data[];
+  step : number; 
 
   constructor(public dataService : DataService) { }
 
@@ -34,6 +35,18 @@ export class InformationListComponent implements OnInit {
     if(confirm('Are you sure of delete this element!!!') == true){
       this.dataService.deleteDataInformation(emp);
     }
+  }
+
+  setStep(index: number) {
+    this.step = index;
+  }
+
+  nextStep() {
+    this.step++;
+  }
+
+  prevStep() {
+    this.step--;
   }
 
 }

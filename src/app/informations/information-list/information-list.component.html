@@ -1,4 +1,4 @@
-<div *ngFor="let getEmployee of dataList; let i = index" >
+<!--<div *ngFor="let getEmployee of dataList; let i = index" >
   <div id="accordion">
       <div class="card">
         <div class="card-header">
@@ -6,7 +6,7 @@
             {{getEmployee.name}}
           </a>
         </div>
-        <div id="collapseOne_{{i}}" class="collapse" data-parent="#accordiont">
+        <div id="collapseOne_{{i}}" class="collapse" data-parent="#accordion">
           <div class="card-body">
             {{getEmployee.description}} - {{getEmployee.comment}} <br>
             <div class="button-group-align">
@@ -17,7 +17,27 @@
         </div>
   </div>
 </div>
-</div>
+</div> -->
+
+    <mat-accordion class="example-headers-align">
+      <div *ngFor="let getEmployee of dataList; let i = index" >
+        <mat-expansion-panel [expanded]="step === i" (opened)="setStep(i)" hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{getEmployee.name}}
+              <mat-icon>description</mat-icon>
+            </mat-panel-title>
+            <mat-panel-description>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <mat-toolbar> {{getEmployee.description}} - {{getEmployee.comment}} </mat-toolbar> 
+          <mat-action-row>
+            <button mat-button color="warn" (click)= "onDelete(getEmployee)" ><mat-icon>delete_foreve</mat-icon></button>
+            <button mat-button color="primary" (click)= "onItemClick(getEmployee)"><mat-icon>cached</mat-icon></button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </div>
+    </mat-accordion>
 <div *ngIf = "dataList?.length == 0">
   <div class="alert alert-success"><strong>No data</strong> for view.!!!</div>	   
 </div>

@@ -1,10 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 input.ng-invalid.ng-dirty{
     border: 1px solid red;
-}
-div.container.init{
-    position: relative;
-    top: 130px;
 }
 ul.navbar-nav.ml-auto{
     position: relative;
@@ -14,3 +11,4 @@ div.dropdown-menu.lf-auto.show{
     position: absolute;
     left: -261%;
 }
+body { margin: 0; }
