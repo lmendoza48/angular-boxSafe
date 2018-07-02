@@ -1,5 +1,6 @@
-<!--<div *ngFor="let getEmployee of dataList; let i = index" >
+
   <div id="accordion">
+      <div *ngFor="let getEmployee of dataList; let i = index" >
       <div class="card">
         <div class="card-header">
           <a class="card-link" data-toggle="collapse" href="#collapseOne_{{i}}">
@@ -9,16 +10,17 @@
         <div id="collapseOne_{{i}}" class="collapse" data-parent="#accordion">
           <div class="card-body">
             {{getEmployee.description}} - {{getEmployee.comment}} <br>
-            <div class="button-group-align">
+          
+          <div class="button-group-align">
                 <button class="btn btn-secunddary" (click)= "onItemClick(getEmployee)"><i class="fas fa-sync"></i></button>
                 <button class="btn btn-danger"  (click)= "onDelete(getEmployee)" ><i class="fas fa-trash-alt"></i></button>
-            </div> 
+          </div> 
           </div>
         </div>
   </div>
 </div>
-</div> -->
-
+</div> 
+<!--
     <mat-accordion class="example-headers-align">
       <div *ngFor="let getEmployee of dataList; let i = index" >
         <mat-expansion-panel [expanded]="step === i" (opened)="setStep(i)" hideToggle>
@@ -37,7 +39,7 @@
           </mat-action-row>
         </mat-expansion-panel>
       </div>
-    </mat-accordion>
+    </mat-accordion>-->
 <div *ngIf = "dataList?.length == 0">
   <div class="alert alert-success"><strong>No data</strong> for view.!!!</div>	   
 </div>
