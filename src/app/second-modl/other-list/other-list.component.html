@@ -1,0 +1,9 @@
+  <ul>
+    <li *ngFor = "let getList of listInfor; let i = index ">
+      <a>
+        <h2>{{getList.name}} <div class="float-right"> <button (click) = "onDelete(getList)"> X </button> </div></h2>
+        <p>{{getList.comment}} - {{ getList.description|date:'fullDate'}}</p>
+      </a>
+    </li>
+</ul>
+<button class="button-class" mat-fab color="primary" (click) = "openDialog()"><i class="material-icons">add</i></button>

@@ -38,7 +38,7 @@ export class InformationComponent implements OnInit {
     this.dataservices.selectedEmployee = {
       $key : null,
       name : '',
-      description : '',
+      description : Date.now(),
       comment : '',
     }
   }

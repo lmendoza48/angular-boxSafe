@@ -37,6 +37,7 @@ export class InformationListComponent implements OnInit {
     }
   }
 
+  /*
   setStep(index: number) {
     this.step = index;
   }
@@ -47,6 +48,6 @@ export class InformationListComponent implements OnInit {
 
   prevStep() {
     this.step--;
-  }
+  }*/
 
 }

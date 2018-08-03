@@ -1,0 +1,17 @@
+<form #employeeForm="ngForm">
+  <div class="example-container">
+      <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="dataServices.selectedEmployee.$key" >
+    <mat-form-field>
+      <input matInput placeholder="titulo"  #name = "ngModel" name="name" [(ngModel)] = "dataServices.selectedEmployee.name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Description" #name = "ngModel" name="comment" [(ngModel)] = "dataServices.selectedEmployee.comment" required = "required"></textarea>
+    </mat-form-field>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Cerrar</button>
+        <button mat-button [mat-dialog-close]="employeeForm" cdkFocusInitial [disabled] = "!employeeForm.valid">Ok</button>
+    </div>
+    
+  </div>
+</form>

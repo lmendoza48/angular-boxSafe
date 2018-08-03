@@ -1,13 +1,18 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top"> 
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" routerLink="/">
            <img src="favicon.ico" alt="BOX-SAFE"> BOX-SAFE 
         </a>
         <!-- Links -->
   <ul class="navbar-nav ml-auto" *ngIf="isAuth && isUserId">
-    <li class="nav-item">
-            <button id="third" class="btn btn-primary"  (click) ="getBack()"> 
-                    <i class="fas fa-sign-out-alt"></i> Logout </button>
-    </li>
+        <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    <i class="fas fa-bars"></i>
+                </a>
+                <div class="dropdown-menu lf-auto">
+                  <a class="dropdown-item" (click) ="getBack()"> <i class="fas fa-sign-out-alt"></i> Logout </a>
+                  <a class="dropdown-item"  routerLink = "/other"> Second Pague </a>
+                </div>
+              </li>
   </ul>
 </nav>
 <div class="row" *ngIf = "isAuth && isUserId">

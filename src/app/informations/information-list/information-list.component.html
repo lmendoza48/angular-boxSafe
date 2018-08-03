@@ -9,8 +9,8 @@
         </div>
         <div id="collapseOne_{{i}}" class="collapse" data-parent="#accordion">
           <div class="card-body">
-            {{getEmployee.description}} - {{getEmployee.comment}} <br>
-          
+           {{getEmployee.comment}} <br>
+           <p style="text-align: right"> {{getEmployee.description | date:'fullDate' }} </p>
           <div class="button-group-align">
                 <button class="btn btn-secunddary" (click)= "onItemClick(getEmployee)"><i class="fas fa-sync"></i></button>
                 <button class="btn btn-danger"  (click)= "onDelete(getEmployee)" ><i class="fas fa-trash-alt"></i></button>

@@ -11,4 +11,13 @@ div.dropdown-menu.lf-auto.show{
     position: absolute;
     left: -261%;
 }
+
+@media (max-width: 412px) {
+    
+    div.dropdown-menu.lf-auto.show{
+        left: -433%;
+    }
+
+}
+
 body { margin: 0; }

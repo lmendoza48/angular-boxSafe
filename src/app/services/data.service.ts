@@ -23,6 +23,8 @@ export class DataService {
   }
 
   insertDataInformation(dataInfo : Data){
+    var dateD = Date.now();
+    dataInfo.description = dateD;
     this.dataList.push({
       name : dataInfo.name,
       description : dataInfo.description,
@@ -31,6 +33,8 @@ export class DataService {
   }
 
   updateDataInformation(information : Data){
+    var dateD = Date.now();
+    information.description = dateD;
     this.dataList.update(information.$key,{
       name : information.name,
       description : information.description,

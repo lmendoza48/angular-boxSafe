@@ -1,6 +1,6 @@
 export class Data {
     $key : string;
     name : string;
-    description : string;
+    description : number;
     comment : string;
 }

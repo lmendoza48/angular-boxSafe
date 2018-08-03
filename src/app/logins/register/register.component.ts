@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     this.auth.signUpWithEmail(form.value)
         .then(()=>{
             form.reset()
-            this.router.navigate(['/data'])
+            this.router.navigate(['/other'])
         }).catch((_error)=>{
           this.errorMessage = _error
           this.router.navigate(['/register'])

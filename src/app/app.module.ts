@@ -19,7 +19,10 @@ import { UsersService } from './services/users.service';
 import { DataService } from './services/data.service';
 import { PageInitComponent } from './page-init/page-init.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialComponents } from './angular-material/material.components'
+import { MaterialComponents } from './angular-material/material.components';
+import { OtherListComponent } from './second-modl/other-list/other-list.component';
+import { SecondModlComponent } from './second-modl/second-modl.component';
+import { PopUpFormComponent } from './second-modl/pop-up-form/pop-up-form.component'
 
 
 const appRoutes: Routes = [
@@ -38,7 +41,11 @@ const appRoutes: Routes = [
   {
     path : 'register',
     component :  RegisterComponent
-  }  
+  },
+  {
+    path : 'other',
+    component :  SecondModlComponent
+  }   
 ];
 
 @NgModule({
@@ -50,7 +57,10 @@ const appRoutes: Routes = [
     LoginsComponent,
     AuthsComponent,
     RegisterComponent,
-    PageInitComponent
+    PageInitComponent,
+    OtherListComponent,
+    SecondModlComponent,
+    PopUpFormComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +74,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MaterialComponents
   ],
+  entryComponents:[PopUpFormComponent],
   providers: [ 
     UsersService,
     DataService
