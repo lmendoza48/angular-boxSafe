@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service';
-import { Data } from '../../models/data';
 import { MatDialog, MatDialogRef } from '../../../../node_modules/@angular/material';
 import { PopUpFormComponent } from '../pop-up-form/pop-up-form.component';
-import { UsersService } from '../../services/users.service';
 import { NgForm } from '../../../../node_modules/@angular/forms';
+import { InformationService } from '../../services/information.service';
+import { Information } from '../../models/information';
 
 @Component({
   selector: 'app-other-list',
@@ -14,21 +13,19 @@ import { NgForm } from '../../../../node_modules/@angular/forms';
 export class OtherListComponent implements OnInit {
   
   /** Data is all information in my DB */
-  listInfor : Data[];
+  listInfor : Information[];
   dialogRef : MatDialogRef<PopUpFormComponent>;
-  name: String;
-  lastName: String;
   
-  constructor(public servicesGetData : DataService, public dialog : MatDialog, public dataServices : DataService) { }
+  constructor(public servicesGetData : InformationService, public dialog : MatDialog) { }
 
   ngOnInit() {
-    var x = this.servicesGetData.getData();
+    var x = this.servicesGetData.getInformation();
     x.snapshotChanges().subscribe(item => {
       this.listInfor = [];
       item.forEach(element =>{
         var y = element.payload.toJSON();
         y["$key"] = element.key;
-        this.listInfor.push(y as Data);
+        this.listInfor.push(y as Information);
       })
     });
   }
@@ -45,16 +42,16 @@ export class OtherListComponent implements OnInit {
 
   onSubmit(form : NgForm) {
     if(form.value.$key == null )
-      this.dataServices.insertDataInformation(form.value);
-      else
-      this.dataServices.updateDataInformation(form.value);  
+      this.servicesGetData.insertInformationInBD(form.value);
+      /*else
+      this.dataServices.updateDataInformation(form.value); */  
     this.resetForm(form)
   }
 
   resetForm(form : NgForm){
     if(form != null)
     form.reset();
-      this.dataServices.selectedEmployee = {
+      this.servicesGetData.selectedData = {
         $key : null,
         name : '',
         description : Date.now(),
@@ -62,9 +59,9 @@ export class OtherListComponent implements OnInit {
     }
   }
 
-  onDelete(informs : Data){
+  onDelete(informs : Information){
     if(confirm('Are you sure of delete this element!!!') == true){
-      this.dataServices.deleteDataInformation(informs);
+      this.servicesGetData.deleteInformationBD(informs);
     }
   }
 }

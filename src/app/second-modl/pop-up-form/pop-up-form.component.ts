@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '../../../../node_modules/@angular/material';
 import { OtherListComponent } from '../other-list/other-list.component';
-import { NgForm } from '../../../../node_modules/@angular/forms';
-import { DataService } from '../../services/data.service';
+import { InformationService } from '../../services/information.service';
 
 @Component({
   selector: 'app-pop-up-form',
@@ -11,10 +10,7 @@ import { DataService } from '../../services/data.service';
 })
 export class PopUpFormComponent implements OnInit {
 
-  name: String;
-  lastName : String;
-
-  constructor(public dialogRef: MatDialogRef<OtherListComponent>, public dataServices : DataService) { }
+  constructor(public dialogRef: MatDialogRef<OtherListComponent>, public dataServices : InformationService) { }
 
   ngOnInit() {
   }
