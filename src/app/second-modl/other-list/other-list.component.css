@@ -26,7 +26,8 @@
     padding-bottom:10px;
   }
   ul li p{
-    font-family:"Reenie Beanie",arial,sans-serif;
+    /*font-family:"Reenie Beanie",arial,sans-serif;*/
+    font-family: 'Tangerine', serif;
     font-size:180%;
     width: 100%;
     height: 64%;
