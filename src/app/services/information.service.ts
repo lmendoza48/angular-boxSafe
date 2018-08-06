@@ -9,6 +9,7 @@ import { UsersService } from './users.service';
 export class InformationService {
 
   idUser:string;
+  commentForm : string;
   informationList : AngularFireList<any>;
   selectedData : Information = new Information();
 
@@ -23,6 +24,8 @@ export class InformationService {
   insertInformationInBD(dataInfo : Information){
     var dateD = Date.now();
     dataInfo.description = dateD;
+    //aqui va lo q frao
+   // this.commentForm = dataInfo.comment.replace('\n','<br>');
     this.informationList.push({
       name : dataInfo.name,
       description : dataInfo.description,
