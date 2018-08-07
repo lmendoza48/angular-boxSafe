@@ -9,8 +9,8 @@
                     <i class="fas fa-bars"></i>
                 </a>
                 <div class="dropdown-menu lf-auto">
+                  <a class="dropdown-item"  routerLink = "/other"> Segunda Pagina </a>
                   <a class="dropdown-item" (click) ="getBack()"> <i class="fas fa-sign-out-alt"></i> Logout </a>
-                  <a class="dropdown-item"  routerLink = "/other"> Second Pague </a>
                 </div>
               </li>
   </ul>
@@ -28,13 +28,13 @@
 </div>
 <div class="container" *ngIf = "!isAuth">
     <div class="alert alert-warning" style="text-align: center">
-        <p><strong>Empty pague.</strong> Login first!!!</p>
-        <button class="btn btn-warning" (click)= "getBack()"> <i class="fa fa-arrow-left"></i> back</button>
+        <p><strong>Empty pague.</strong> Login Primero!!!</p>
+        <button class="btn btn-warning" (click)= "getBack()"> <i class="fas fa-backspace"></i> Regresar </button>
     </div>
 </div>
 <div class="container" *ngIf = "!isUserId">
     <div class="alert alert-danger" style="text-align: center">
-        <p><strong>Error with your login.</strong>  Login Again please!!!</p>
-        <button class="btn btn-danger" (click)= "getBack()"> <i class="fa fa-arrow-left"></i> back</button>
+        <p><strong>Error with your login.</strong>  Login de nuevo!!!</p>
+        <button class="btn btn-danger" (click)= "getBack()"> <i class="fas fa-backspace"></i> Regresar </button>
     </div>
 </div>

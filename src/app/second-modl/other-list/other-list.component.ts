@@ -43,8 +43,8 @@ export class OtherListComponent implements OnInit {
   onSubmit(form : NgForm) {
     if(form.value.$key == null )
       this.servicesGetData.insertInformationInBD(form.value);
-      /*else
-      this.dataServices.updateDataInformation(form.value); */  
+      else
+      this.servicesGetData.updateDataInformation(form.value);  
     this.resetForm(form)
   }
 
@@ -63,5 +63,10 @@ export class OtherListComponent implements OnInit {
     if(confirm('Are you sure of delete this element!!!') == true){
       this.servicesGetData.deleteInformationBD(informs);
     }
+  }
+
+  onUpdate(informData : Information){
+    this.servicesGetData.selectedData = Object.assign({}, informData);
+    this.openDialog();
   }
 }

@@ -24,12 +24,20 @@ export class InformationService {
   insertInformationInBD(dataInfo : Information){
     var dateD = Date.now();
     dataInfo.description = dateD;
-    //aqui va lo q frao
-   // this.commentForm = dataInfo.comment.replace('\n','<br>');
     this.informationList.push({
       name : dataInfo.name,
       description : dataInfo.description,
       comment : dataInfo.comment
+    })
+  }
+  
+  updateDataInformation(informs : Information){
+    var dateD = Date.now();
+    informs.description = dateD;
+    this.informationList.update(informs.$key,{
+      name : informs.name,
+      description : informs.description,
+      comment : informs.comment
     })
   }
 
