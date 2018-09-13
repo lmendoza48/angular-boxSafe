@@ -4,6 +4,7 @@ import { PopUpFormComponent } from '../pop-up-form/pop-up-form.component';
 import { NgForm } from '../../../../node_modules/@angular/forms';
 import { InformationService } from '../../services/information.service';
 import { Information } from '../../models/information';
+import { DragulaService } from 'ng2-dragula';
 
 @Component({
   selector: 'app-other-list',
@@ -16,7 +17,13 @@ export class OtherListComponent implements OnInit {
   listInfor : Information[];
   dialogRef : MatDialogRef<PopUpFormComponent>;
   
-  constructor(public servicesGetData : InformationService, public dialog : MatDialog) { }
+  constructor(public servicesGetData : InformationService, public dialog : MatDialog, private dragola : DragulaService) { 
+    const bag: any = this.dragola.find('listInfor-bag');
+    if (bag !== undefined ) this.dragola.destroy('listInfor-bag');
+    this.dragola.createGroup("listInfor-bag", {
+      removeOnSpill: false
+    });
+  }
 
   ngOnInit() {
     var x = this.servicesGetData.getInformation();

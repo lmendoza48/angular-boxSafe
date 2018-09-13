@@ -1,5 +1,5 @@
 
-  <div id="accordion">
+  <div id="accordion" [dragula]="'dataList-bag'" [(dragulaModel)]="dataList">
       <div *ngFor="let getEmployee of dataList; let i = index" >
       <div class="card">
         <div class="card-header">

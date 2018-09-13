@@ -22,7 +22,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialComponents } from './angular-material/material.components';
 import { OtherListComponent } from './second-modl/other-list/other-list.component';
 import { SecondModlComponent } from './second-modl/second-modl.component';
-import { PopUpFormComponent } from './second-modl/pop-up-form/pop-up-form.component'
+import { PopUpFormComponent } from './second-modl/pop-up-form/pop-up-form.component';
+
+import { DragulaModule } from 'ng2-dragula';
+
+
 
 
 const appRoutes: Routes = [
@@ -72,7 +76,8 @@ const appRoutes: Routes = [
       appRoutes //route where my app
     ),
     BrowserAnimationsModule,
-    MaterialComponents
+    MaterialComponents,
+    DragulaModule.forRoot()
   ],
   entryComponents:[PopUpFormComponent],
   providers: [ 

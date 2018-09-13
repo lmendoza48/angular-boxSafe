@@ -1,10 +1,15 @@
+
   <ul>
+   <div [dragula]="'listInfor-bag'" [(dragulaModel)]="listInfor" >
     <li *ngFor = "let getList of listInfor; let i = index ">
       <a>
         <h2>{{getList.name}} <div class="float-right"> <div class="button-style" (click) = "onDelete(getList)"><i class="fas fa-times"></i></div> </div></h2>
         <pre (click) = "onUpdate(getList)" >{{getList.comment}}</pre> <b><h6>{{getList.description|date:'fullDate'}}</h6></b>
       </a>
     </li>
+  </div>
 </ul>
+
+
 <button class="button-class" mat-fab color="primary" (click) = "openDialog()"><i class="material-icons">add</i></button>
 <!--<div class="float-left"> <div class="button-style" (click) = "onUpdate(getList)"><i class="fas fa-times"></i></div> </div> -->

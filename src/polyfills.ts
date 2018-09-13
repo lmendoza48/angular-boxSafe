@@ -78,3 +78,6 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+ /** esto es para la ventana modal con libreria: 'dragulaModel'*/
+(window as any).global = window;
