@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 input.ng-invalid.ng-dirty{
     border: 1px solid red;
 }
@@ -19,14 +20,15 @@ div.dropdown-menu.lf-auto.show{
     }
 
 }
-/*section { 
-    background-image: url("imgBody.jpg");
+body { 
+    background-image: url("newBodyImg.jpg");
     background-size: cover;
-    padding-bottom: 22%;
- }*/
+   /* padding-bottom: 22%;*/
+ }
  
 body { margin: 0; }
 
+/*******************  Style Pop Up *****************/
 /* in-flight clone */
 .gu-mirror {
     position: fixed !important;

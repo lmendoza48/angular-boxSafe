@@ -15,11 +15,11 @@ export class InformationListComponent implements OnInit {
   step : number; 
 
   constructor(public dataService : DataService, private dragula : DragulaService) { 
-    const bag: any = this.dragula.find('dataList-bag');
+    /*const bag: any = this.dragula.find('dataList-bag');
     if (bag !== undefined ) this.dragula.destroy('dataList-bag');
     this.dragula.createGroup("dataList-bag", {
       removeOnSpill: false
-    });
+    });*/
   }
 
   ngOnInit() {
