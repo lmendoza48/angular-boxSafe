@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   errorMessage: {name: string, message : string} = {name : '', message : ''};
-  
+  title : string = "Box-safe";
 
   constructor(public auth : UsersService, private router : Router) { }
 

@@ -9,3 +9,42 @@
     }
 
 }*/
+.register_style {
+    position: absolute;
+    top: 9%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+  }
+mat-sidenav.sidenav-content{
+    width: 58%;
+    background-image: url("../../img/newBodyImg.jpg");
+    background-size: cover;
+}
+div#mobile-desing{
+    display: none;
+}
+div#desktop_style{
+    width: 80%;
+    top: 8%;
+    left: 12%;
+}
+h1.mark_style{
+    position: relative;
+    top: 46%;
+    left: 30%;
+}
+
+@media (max-width: 600px) {
+
+    div#mobile-desing{
+        display: block;
+    }
+    mat-sidenav-container.register_style{
+        display: none;
+    }
+
+}
+ 
+  

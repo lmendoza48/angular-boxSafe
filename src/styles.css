@@ -21,7 +21,7 @@ div.dropdown-menu.lf-auto.show{
 
 }
 body { 
-    background-image: url("newBodyImg.jpg");
+    background-image: url("./app/img/newBodyImg.jpg");
     background-size: cover;
    /* padding-bottom: 22%;*/
  }
