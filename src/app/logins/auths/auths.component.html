@@ -19,9 +19,13 @@
                <label for="password">Password:</label>
                  <div class="input-group">
                    <span class="input-group-text"> <i class="fas fa-key"></i></span>
-                     <input type="password" class="form-control" name="password" [(ngModel)] = "password" >
-                   </div>
-                </div>
+                     <input [type] = "show ? 'text':'password'" class="form-control" name="password" [(ngModel)] = "password" >
+                      <div class="togglePassword" (click)="changeType()"> 
+                        <i [ngStyle]= "{'display': show ? 'none' : '-webkit-box' }" class="fas fa-eye-slash"></i> 
+                        <i [ngStyle]= "{'display': show ? '-webkit-box' : 'none' }" class="fas fa-eye"></i>
+                      </div>
+                 </div>
+              </div>
                 <button type="submit" class="btn primary" [disabled] ="!users.valid"> Login </button>
             </form>
           </div>
@@ -52,7 +56,11 @@
             <label for="password">Password:</label>
               <div class="input-group">
                 <span class="input-group-text"> <i class="fas fa-key"></i></span>
-                <input type="password" class="form-control" name="password" [(ngModel)] = "password" >
+                <input [type] = "show ? 'text':'password'" class="form-control" name="password" [(ngModel)] = "password" >
+                <div class="togglePassword" (click)="changeType()"> 
+                    <i [ngStyle]= "{'display': show ? 'none' : '-webkit-box' }" class="fas fa-eye-slash"></i> 
+                    <i [ngStyle]= "{'display': show ? '-webkit-box' : 'none' }" class="fas fa-eye"></i>
+                  </div>
               </div>
           </div>
           <button type="submit" class="btn primary" [disabled] ="!users.valid"> Login </button>
