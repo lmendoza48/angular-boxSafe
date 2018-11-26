@@ -19,10 +19,10 @@
                <label for="password">Password:</label>
                  <div class="input-group">
                    <span class="input-group-text"> <i class="fas fa-key"></i></span>
-                     <input [type] = "show ? 'text':'password'" class="form-control" name="password" [(ngModel)] = "password" >
+                     <input [type] = "show ? 'password':'text'" class="form-control" name="password" [(ngModel)] = "password" >
                       <div class="togglePassword" (click)="changeType()"> 
-                        <i [ngStyle]= "{'display': show ? 'none' : '-webkit-box' }" class="fas fa-eye-slash"></i> 
-                        <i [ngStyle]= "{'display': show ? '-webkit-box' : 'none' }" class="fas fa-eye"></i>
+                        <i [ngStyle]= "{'display': show ? '-webkit-box' : 'none' }" class="fas fa-eye-slash"></i> 
+                        <i [ngStyle]= "{'display': show ? 'none' : '-webkit-box' }" class="fas fa-eye"></i>
                       </div>
                  </div>
               </div>
@@ -56,10 +56,10 @@
             <label for="password">Password:</label>
               <div class="input-group">
                 <span class="input-group-text"> <i class="fas fa-key"></i></span>
-                <input [type] = "show ? 'text':'password'" class="form-control" name="password" [(ngModel)] = "password" >
+                <input [type] = "show ? 'password':'text'" class="form-control" name="password" [(ngModel)] = "password" >
                 <div class="togglePassword" (click)="changeType()"> 
-                    <i [ngStyle]= "{'display': show ? 'none' : '-webkit-box' }" class="fas fa-eye-slash"></i> 
-                    <i [ngStyle]= "{'display': show ? '-webkit-box' : 'none' }" class="fas fa-eye"></i>
+                    <i [ngStyle]=  "{'display': show ? '-webkit-box' : 'none' }" class="fas fa-eye-slash"></i> 
+                    <i [ngStyle]= "{'display': show ? 'none' : '-webkit-box' }" class="fas fa-eye"></i>
                   </div>
               </div>
           </div>
