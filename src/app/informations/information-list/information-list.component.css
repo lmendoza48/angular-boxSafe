@@ -26,6 +26,9 @@ button.btn.btn-info.data{
 div.input-group.mb-3{
 width: 40%;
 }
+div.container{
+    position: absolute;
+}
 
 @media (max-width: 400px) {
 
