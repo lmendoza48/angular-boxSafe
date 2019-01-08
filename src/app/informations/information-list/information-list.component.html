@@ -1,6 +1,33 @@
-<!-- <div id="accordion" [dragula]="'dataList-bag'" [(dragulaModel)]="dataList"> -->
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1"><i class='fas fa-search'></i> </span>
+  </div>
+  <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]="term">
+  <button class="btn btn-info data"  (click) = "openDialog()">Nuevo</button>
+</div>
+
+<div class="container">
+  <div class="card" *ngFor="let getEmployee of dataList | filter:term; let i = index">
+    <div class="card-body">
+      <h5 class="card-title"> {{getEmployee.name}} </h5>
+    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> --> 
+      <pre class="card-text" > {{getEmployee.comment}} </pre>
+    </div>
+    <div class="button-group-align">
+      <button class="btn btn-secunddary" (click)= "onItemClick(getEmployee)"><i class="fas fa-sync"></i></button>
+      <button class="btn btn-danger"  (click)= "onDelete(getEmployee)" ><i class="fas fa-trash-alt"></i></button>
+    </div> 
+  </div>
+</div>
+
+
+<!---    ///////*********************************************************************** -->
+
+<!-- <div id="accordion" [dragula]="'dataList-bag'" [(dragulaModel)]="dataList"> 
+  <input type="text" [(ngModel)]="term"> <!-- Me sirve para buscar datos 
+
   <div id="accordion"> 
-      <div class="card" *ngFor="let getEmployee of dataList; let i = index">
+      <div class="card" *ngFor="let getEmployee of dataList | filter:term; let i = index">
         <div class="card-header">
           <a class="card-link" data-toggle="collapse" href="#collapseOne_{{i}}">
             {{getEmployee.name}}

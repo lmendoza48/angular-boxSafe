@@ -6,3 +6,10 @@ button#third{
     position: relative;
     left: 75%;
 }
+div.card-header .button-style{
+    width: 9%;
+    position: absolute;
+    right: 0%;
+    top: 3%;
+    cursor: pointer;
+}

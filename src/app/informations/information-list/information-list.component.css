@@ -1,26 +1,39 @@
 div.button-group-align{
     position: relative;
-    left: 75%;
-    width: 28%;
+    left: 60%;
+    bottom: 6%;
 }
 div.button-group-align button.btn.btn-danger{
     position: relative;
-    left: 6%;
+    left: 3%;
 }
-div#accordion{
-    padding-bottom: 15px;
+div.card{ 
+    width: 18rem;
+    margin: 0.5rem;
+    float: left;
+    height: 15rem;
+}
+div pre {
+    margin-top: 0;
+    margin-bottom: 1rem !important;
+    height: 108px;
+    overflow: auto;
+}
+button.btn.btn-info.data{
+    position: absolute;
+    left: 104%;
+}
+div.input-group.mb-3{
+width: 40%;
 }
 
 @media (max-width: 400px) {
 
     div.button-group-align{
-        left: 72%;
-        top: 5px;
-        width: 40%;
-    }
-    div#accordion{
-        padding-top: 10%;
-        padding-bottom: 10%;
+        left: 65%;
     }
 
+    div.input-group.mb-3{
+        width: 100%;
+    }
 }

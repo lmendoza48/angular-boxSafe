@@ -26,8 +26,7 @@ import { PopUpFormComponent } from './second-modl/pop-up-form/pop-up-form.compon
 
 import { DragulaModule } from 'ng2-dragula';
 
-
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter'
 
 const appRoutes: Routes = [
   {
@@ -68,6 +67,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    Ng2SearchPipeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -79,7 +79,8 @@ const appRoutes: Routes = [
     MaterialComponents,
     DragulaModule.forRoot()
   ],
-  entryComponents:[PopUpFormComponent],
+  entryComponents:[PopUpFormComponent,
+  InformationComponent],
   providers: [ 
     UsersService,
     DataService

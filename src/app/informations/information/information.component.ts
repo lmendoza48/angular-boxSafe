@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms'
 
 import { DataService } from '../../services/data.service';
 import { UsersService } from '../../services/users.service';
+import { MatDialogRef } from '@angular/material';
+import { InformationListComponent } from '../information-list/information-list.component';
 
 
 @Component({
@@ -14,7 +16,7 @@ export class InformationComponent implements OnInit {
 
   isAuth : boolean = false;
 
-  constructor(public dataservices : DataService, public userServices : UsersService) { }
+  constructor(public dataservices : DataService, public userServices : UsersService, public dialogRef : MatDialogRef<InformationListComponent>) { }
 
   ngOnInit() {
   }
@@ -28,7 +30,8 @@ export class InformationComponent implements OnInit {
       this.dataservices.insertDataInformation(form.value);
       else
       this.dataservices.updateDataInformation(form.value);  
-    this.resetForm(form)
+    this.resetForm(form);
+    this.onClose();
   }
 
   resetForm(form? : NgForm)
@@ -42,9 +45,14 @@ export class InformationComponent implements OnInit {
       comment : '',
     }
   }
-
-  onLogout(){
-    this.userServices.signOut();
+  
+  onClose(): void {
+    this.resetForm();
+    this.dialogRef.close();
   }
+
+ /* onLogout(){
+    this.userServices.signOut();
+  }*/
 
 }
