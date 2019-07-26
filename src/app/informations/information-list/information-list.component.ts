@@ -39,12 +39,12 @@ export class InformationListComponent implements OnInit {
   }
 
   openDialog(): void {
-    this.dialogRef = this.dialog.open(InformationComponent);
+    this.dialogRef = this.dialog.open(InformationComponent, {
+           width: '600px',
+          height: '30rem',
+    });
     this.dialogRef.afterClosed().subscribe(result => {
-     console.log('The dialog was closed' + result );
-     /* if(result != undefined){
-        this.onItemClick(result);
-      }*/
+         this.dataService.selectedEmployee = new Data()
     });
   }
 
